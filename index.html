@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="icon/x-image" href="assets/images/tab-icon.png" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Library</title>
+  </head>
+  <body>
+    <main>
+      <section class="filter-container">
+        <div class="search-by-key-words">
+          <input
+            type="text"
+            placeholder="Enter book name"
+            class="search-input"
+          />
+        </div>
+        <div class="search-by-genre">
+          <select name="book-genres" id="book-genres">
+            <option value="all">All</option>
+            <option value="adventure">Adventure</option>
+            <option value="fiction">Fiction</option>
+            <option value="drama">Drama</option>
+            <option value="horror">Horror</option>
+            <option value="crime">Crime</option>
+            <option value="history">History</option>
+            <option value="biography">Biography</option>
+            <option value="poetry">Poetry</option>
+            <option value="comedy">Comedy</option>
+          </select>
+        </div>
+        <div class="filtering-by-cost">
+          <select name="price-filtering" id="price-filtering">
+            <option value="not-sorted-by-price" disabled selected>
+              Choose
+            </option>
+            <option value="from-cheap-to-expencive">
+              From cheap to expencive
+            </option>
+            <option value="from-expencive-to-cheap">
+              From expencive to cheap
+            </option>
+          </select>
+        </div>
+        <button type="button" class="reset-all-filters">Reset</button>
+      </section>
+      <section class="books-containers"></section>
+    </main>
+    <script defer src="js/main.js"></script>
+  </body>
+</html>
