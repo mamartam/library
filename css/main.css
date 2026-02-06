@@ -117,6 +117,37 @@ main {
 .reset-all-filters:hover {
   background-color: var(--redish-hover-and-book-name);
 }
+/* loader */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+  gap: 15px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--container-bg);
+  border-top: 5px solid var(--redish-hover-and-book-name);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none !important;
+}
 
 /* tablet */
 @media screen and (min-width: 700px) {
