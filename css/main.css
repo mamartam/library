@@ -62,7 +62,7 @@ main {
 }
 .search-input::placeholder {
   color: var(--brown-filter-text-color);
-  font-family: "Urbanist";
+  font-family: inherit;
 }
 .books-containers {
   display: grid;
