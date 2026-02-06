@@ -1,43 +1,52 @@
+/* VARIABLES */
 :root {
-  --body-bg: #ddd2c4;
-  --book-boox-bg: #f0eae2;
+  --body-bg: #f0eae2;
+  --container-bg: #faf7f4;
+  --brown-filter-text-color: brown;
+  --redish-basic: #db7372;
+  --redish-hover-and-book-name: #e25754;
 }
-
+/* FONTS */
 @font-face {
   font-family: "Urbanist";
   src: url("../assets/fonts/Urbanist/Urbanist-VariableFont_wght.ttf");
 }
 
+/* reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+input,
+select,
+button {
+  border: none;
+  background-color: transparent;
+}
+
+/* base styles */
 body {
-  background-color: var(--book-boox-bg);
   min-height: 100vh;
+  background-color: var(--body-bg);
+  display: flex;
+  flex-direction: column;
   font-family: "Urbanist";
+  font-size: 16px;
 }
 main {
-  margin: 25px;
   position: relative;
   z-index: 1;
 }
+
 .filter-container {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  background-color: var(--book-boox-bg);
-  padding: 15px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.reset-all-filters,
-.filtering-by-cost,
-.search-by-genre,
-.search-by-key-words {
-  margin: 0 15px;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 15px;
+  margin: 15px;
+  background-color: var(--body-bg);
 }
 .search-input,
 #book-genres,
@@ -46,43 +55,37 @@ main {
   border: none;
   border-radius: 10px;
   padding: 10px 25px;
-  background-color: #faf7f4;
+  background-color: var(--container-bg);
+  color: var(--brown-filter-text-color);
+  font-family: "Urbanist";
+  font-weight: 500;
 }
-.reset-all-filters {
-  background-color: #db7372;
-  color: #faf7f4;
-  cursor: pointer;
-}
-
-#book-genres option {
-  border: none;
-  border-radius: 10px;
-  padding: 10px 25px;
+.search-input::placeholder {
+  color: var(--brown-filter-text-color);
+  font-family: "Urbanist";
 }
 .books-containers {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  margin: 25px;
 }
-.books-containers article {
+.book-box {
   display: block;
   width: 300px;
   height: 400px;
   background-color: #faf7f4;
-  /* border: 1px solid white; */
-  box-shadow: 0 0 2px var(--book-boox-bg);
+  box-shadow: 0 0 2px var(--container-bg);
   border-radius: 20px;
   padding: 25px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: space-between;
-  margin: 10px;
   transform: translateY(0);
   transition: transform 0.3s linear;
+  margin: 0 auto;
 }
-.books-containers article:hover {
+.book-box:hover {
   transform: translateY(-10px);
   cursor: pointer;
 }
@@ -96,12 +99,59 @@ main {
 }
 .book-name {
   text-align: center;
-}
-.filter-container {
-  display: flex;
+  color: var(--redish-hover-and-book-name);
 }
 
 .book-author-name,
 .book-cost {
   text-align: start;
+}
+.reset-all-filters {
+  background-color: var(--redish-basic);
+  color: #faf7f4;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background-color 0.3s linear;
+}
+.reset-all-filters:hover {
+  background-color: var(--redish-hover-and-book-name);
+}
+
+/* tablet */
+@media screen and (min-width: 700px) {
+  main {
+    margin: 25px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .filter-container {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: var(--body-bg);
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 25px;
+  }
+  .books-containers {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* large tablet */
+@media screen and (min-width: 1000px) {
+  .books-containers {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* desktop styles */
+@media screen and (min-width: 1400px) {
+  .books-containers {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
