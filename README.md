@@ -46,5 +46,5 @@ Even though the project is fully functional, there is always room for growth. He
   - Implementing a more detailed "Book Details" modal or a separate page for each book.
 - Refined Error Handling: Adding a "Retry" button or more specific error messages if the API fetch fails or if no books match the search criteria.
 
-## 🍿 Image
+## 🍿 Image of web-page
 <img width="3035" height="1624" alt="Image" src="https://github.com/user-attachments/assets/ab9e1826-2198-4430-867d-e775bd550773" />
