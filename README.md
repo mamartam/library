@@ -48,4 +48,3 @@ Even though the project is fully functional, there is always room for growth. He
 
 ## 🍿 Image
 <img width="3035" height="1624" alt="Image" src="https://github.com/user-attachments/assets/ab9e1826-2198-4430-867d-e775bd550773" />
-To see the video look at the "Videos folder" in assets filder or just simply click <a href="assets/videos/library2.mp4">HERE</a>
