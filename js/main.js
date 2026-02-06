@@ -78,7 +78,9 @@ function filteringBooksByItsCost(val, array) {
 }
 
 async function gettingInfoFromExternalSource() {
+  const loader = document.querySelector("#loader");
   try {
+    loader.classList.remove("hidden");
     const response = await fetch("https://gutendex.com/books/");
     const data = await response.json();
 
@@ -117,6 +119,10 @@ async function gettingInfoFromExternalSource() {
     });
   } catch (error) {
     console.log("There is some error", error);
+    loader.innerHTML = "<p>Failed to load books. Please try again later.</p>";
+  }
+  finally {
+    loader.classList.add("hidden");
   }
 }
 gettingInfoFromExternalSource();
